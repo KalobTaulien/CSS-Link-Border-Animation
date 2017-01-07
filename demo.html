@@ -1,0 +1,63 @@
+<style>
+a {
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+    font-weight: bold;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:after {
+	content: '';
+	display: block;
+    /* Remove the margin to make the border slide left to right, by default */
+	margin: auto;
+    /* Height is the height of your border. */
+	height: 2px;
+	width: 0px;
+	background: transparent;
+    /* Change the speed by changing the `.5` to, for example, `2.5` */
+	transition: width .5s ease, background-color .5s ease;
+}
+
+a:hover:after {
+	width: 100%;
+	background: black;
+}
+
+a.left:after {
+    margin: inherit;
+}
+
+a.right:after {
+    margin: inherit;
+    float: right;
+}
+</style>
+
+<div style='padding:50px;'>
+
+    <p>
+        Hover your mouse over any of the bold links.
+    </p>
+
+    <p>
+        This link slides out from the center:
+        <a href='https://arkmont.com/'>Arkmont.com</a>
+    </p>
+
+    <p>
+        This link slides out from the left:
+        <a href='https://arkmont.com/' class='left'>Arkmont.com</a>
+    </p>
+
+    <p>
+        This link slides out from the right:
+        <a href='https://arkmont.com/' class='right'>Arkmont.com</a>
+    </p>
+
+</div>
